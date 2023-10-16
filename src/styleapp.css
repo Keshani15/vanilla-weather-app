@@ -1,3 +1,5 @@
-h1 {
-  color: blueviolet;
+.temperature-display {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
 }
