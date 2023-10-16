@@ -20,42 +20,45 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Johannesburg</h1>
-        <div class="row">
-          <div class="col-5">
-            <div class="temperature-display">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="Mostly Sunny"
-              />
-              22<span class="degrees">°C | °F </span>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1>Johannesburg</h1>
+          <div class="row">
+            <div class="col-5">
+              <div class="d-flex temperature-display">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Mostly Sunny"
+                />
+                <strong id="temperature">22</strong
+                ><span class="units">°C | °F </span>
+              </div>
+            </div>
+            <div class="col-3">
+              <ul class="weather-additions">
+                <li>Precipitation: 4%</li>
+                <li>Humidity: 53%</li>
+                <li>Wind: 14km/h</li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <ul>
+                <div class="weather"><li>Weather</li></div>
+                <div class="day-and-time"><li>Monday 17:28</li></div>
+                <div class="day-description"><li>Mostly Sunny</li></div>
+              </ul>
             </div>
           </div>
-          <div class="col-3">
-            <ul class="weather-additions">
-              <li>Precipitation: 4%</li>
-              <li>Humidity: 53%</li>
-              <li>Wind: 14km/h</li>
-            </ul>
-          </div>
-          <div class="col-4">
-            <ul>
-              <div class="weather"><li>Weather</li></div>
-              <div class="day-and-time"><li>Monday 17:28</li></div>
-              <div class="day-description"><li>Mostly Sunny</li></div>
-            </ul>
-          </div>
-          <small>
-            <a
-              class="footerNote"
-              href="https://github.com/Keshani15/weather-app"
-              target="_blank"
-            >
-              Open-source code </a
-            ><span class="name">by Keshani Naidoo</span></small
-          >
         </div>
+        <small>
+          <a
+            class="footerNote"
+            href="https://github.com/Keshani15/weather-app"
+            target="_blank"
+          >
+            Open-source code </a
+          ><span class="name">by Keshani Naidoo</span></small
+        >
       </div>
       <script src="src/scriptapp.js"></script>
     </div>
