@@ -12,6 +12,10 @@ ul {
   margin: 0;
 }
 
+.day-description {
+  text-transform: capitalize;
+}
+
 small {
   font-size: 12px;
   margin: 0;
