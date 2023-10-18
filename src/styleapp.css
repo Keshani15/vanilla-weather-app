@@ -12,10 +12,6 @@ ul {
   margin: 0;
 }
 
-.day-description::first-letter {
-  text-transform: capitalize;
-}
-
 small {
   font-size: 12px;
   margin: 0;
@@ -92,7 +88,11 @@ small {
   text-align: right;
 }
 
-.col-3 {
+.day-description::first-letter {
+  text-transform: capitalize;
+}
+
+#col-position {
   position: relative;
   left: -55px;
 }
