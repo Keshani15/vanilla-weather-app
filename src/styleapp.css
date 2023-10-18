@@ -12,7 +12,7 @@ ul {
   margin: 0;
 }
 
-.day-description {
+.day-description::first-letter {
   text-transform: capitalize;
 }
 
@@ -76,7 +76,7 @@ small {
   text-align: right;
 }
 
-.day-and-time {
+#day-and-time {
   color: #70757a;
   font-size: 16px;
   font-family: arial, sans-serif;
@@ -94,5 +94,5 @@ small {
 
 .col-3 {
   position: relative;
-  left: -60px;
+  left: -55px;
 }
