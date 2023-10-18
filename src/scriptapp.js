@@ -38,10 +38,11 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   dateElement.innerHTML = formateDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 let apiKey = `a6bb6oe20805b9ecd0dta4d24747d30f`;
-let city = "Paris";
+let city = "Johannesburg";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
