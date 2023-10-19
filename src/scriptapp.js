@@ -21,6 +21,7 @@ function formateDate(timestamp) {
 
   return `${day} ${hours}:${minutes}`;
 }
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -41,12 +42,14 @@ function displayTemperature(response) {
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
 }
+
 function search(city) {
   let apiKey = `a6bb6oe20805b9ecd0dta4d24747d30f`;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
 }
+
 function handleSearch(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
