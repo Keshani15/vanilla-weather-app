@@ -46,12 +46,14 @@
               <div class="d-flex temperature-display">
                 <img src="" alt="Mostly Sunny" id="icon" />
                 <strong id="temperature"></strong
-                ><span class="units">°C | °F</span>
+                ><span class="units">
+                  <a href="#" class="active" id="celsius">°C</a> |
+                  <a href="#" id="fahr">°F</a></span
+                >
               </div>
             </div>
             <div class="col-3" id="col-position">
               <ul class="weather-additions">
-                <li>Precipitation: 4%</li>
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span>km/h</li>
               </ul>
