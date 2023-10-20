@@ -71,6 +71,7 @@ function displayCelTemp(event) {
   degreeCelLink.classList.add("active");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
+
 let celsiusTemp = null;
 
 let form = document.querySelector("#seacrh-form");
@@ -83,3 +84,15 @@ let degreeCelLink = document.querySelector("#celsius");
 degreeCelLink.addEventListener("click", displayCelTemp);
 
 search("Johannesburg");
+
+const weatherApp = document.querySelector("#weather-app");
+const date = new Date();
+const hour = date.getHours();
+
+if (hour < 12) {
+  weatherApp.style.backgroundColor = "rgb(2, 83, 185, 0.5";
+} else if (hour < 18) {
+  weatherApp.style.backgroundColor = "rgba(255, 200, 124, 0.5";
+} else {
+  weatherApp.style.backgroundColor = "rgba(17, 29, 94, 0.8";
+}
