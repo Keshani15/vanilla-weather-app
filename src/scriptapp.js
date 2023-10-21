@@ -22,26 +22,40 @@ function formateDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
+  console.log(forecast);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay) {
+    let max = Math.round(forecastDay.temperature.maximum);
+    let min = Math.round(forecastDay.temperature.minimum);
     forecastHTML =
       forecastHTML +
-      `<div class="col">
-          <div class="weather-forecast-day">${day}</div>
+      `<div class="col-2">
+          <div class="weather-forecast-day">${formateDay(
+            forecastDay.time
+          )}</div>
           <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-            alt=""
+            src="${forecastDay.condition.icon_url}"
+            alt="${forecastDay.condition.icon}"
             width="36px"
             class="icon-weather-forecast"
           />
           <div class="weather-forecast-temp">
-            <span class="forecast-max">21°</span>
-            <span class="forecast-min">12°</span>
+            <span class="forecast-max">${max}°</span>
+            <span class="forecast-min">${min}°</span>
           </div>
         </div>
         `;
