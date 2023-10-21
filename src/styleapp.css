@@ -114,3 +114,18 @@ small {
 .units .active :hover {
   text-decoration: none;
 }
+
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.weather-forecast-day {
+  text-align: center;
+  padding-left: 7px;
+}
+
+.weather-forecast-temp {
+  font-size: 13px;
+}
