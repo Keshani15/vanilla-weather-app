@@ -1,3 +1,30 @@
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+          <div class="weather-forecast-day">${day}</div>
+          <img
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            alt=""
+            width="36px"
+            class="icon-weather-forecast"
+          />
+          <div class="weather-forecast-temp">
+            <span class="forecast-max">21°</span>
+            <span class="forecast-min">12°</span>
+          </div>
+        </div>
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function formateDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -84,6 +111,8 @@ let degreeCelLink = document.querySelector("#celsius");
 degreeCelLink.addEventListener("click", displayCelTemp);
 
 search("Johannesburg");
+
+displayForecast();
 
 const weatherApp = document.querySelector("#weather-app");
 const date = new Date();
