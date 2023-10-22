@@ -83,6 +83,22 @@ function displayTemperature(response) {
 
   celsiusTemp = response.data.temperature.current;
 
+  const weatherApp = document.querySelector("#weather-app");
+  const descriptionCol = response.data.condition.description;
+
+  if (
+    descriptionCol === "clear sky" ||
+    descriptionCol === "broken clouds" ||
+    descriptionCol === "few clouds" ||
+    descriptionCol === "scattered clouds"
+  ) {
+    weatherApp.style.backgroundColor = "rgb(95, 209, 249, 0.8)";
+  } else if (descriptionCol === "light rain" || descriptionCol === "rain") {
+    weatherApp.style.backgroundColor = "rgba(5, 111, 146, 0.5)";
+  } else {
+    weatherApp.style.backgroundColor = "rgba(6, 57, 84, 0.5)";
+  }
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   humidityElement.innerHTML = response.data.temperature.humidity;
@@ -136,15 +152,3 @@ let degreeCelLink = document.querySelector("#celsius");
 degreeCelLink.addEventListener("click", displayCelTemp);
 
 search("Johannesburg");
-
-const weatherApp = document.querySelector("#weather-app");
-const date = new Date();
-const hour = date.getHours();
-
-if (hour < 12) {
-  weatherApp.style.backgroundColor = "rgb(2, 83, 185, 0.5";
-} else if (hour < 18) {
-  weatherApp.style.backgroundColor = "rgba(255, 200, 124, 0.5";
-} else {
-  weatherApp.style.backgroundColor = "rgba(17, 29, 94, 0.8";
-}
