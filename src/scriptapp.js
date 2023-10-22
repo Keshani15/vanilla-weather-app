@@ -124,31 +124,7 @@ function handleSearch(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrTemp(event) {
-  event.preventDefault();
-  let fahrTemp = (celsiusTemp * 9) / 5 + 32;
-  degreeCelLink.classList.remove("active");
-  degreesFahrLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrTemp);
-}
-
-function displayCelTemp(event) {
-  let temperatureElement = document.querySelector("#temperature");
-  degreesFahrLink.classList.remove("active");
-  degreeCelLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
-
 let form = document.querySelector("#seacrh-form");
 form.addEventListener("submit", handleSearch);
-
-let degreesFahrLink = document.querySelector("#fahr");
-degreesFahrLink.addEventListener("click", displayFahrTemp);
-
-let degreeCelLink = document.querySelector("#celsius");
-degreeCelLink.addEventListener("click", displayCelTemp);
 
 search("Johannesburg");
